@@ -1,0 +1,31 @@
+Freelancing site
+Food ordering
+Hotel Check in
+Open Marketplace
+
+
+Food Ordering:
+Client	:
+'/'			Landing Page => Promo/Highlight
+'/auth/register'	POST register form
+'/auth/login'		POST login form
+'/profile'		GET profile info
+			PUT profil info
+			DELETE profil info
+			DELETE account / Deactivate
+'/menu'			GET all menu(s)
+			GET menu description
+			POST to add menu to cart
+'/menu/id/rating	POST rating and comment
+			PUT rating and comment
+'/cart'			GET all menu(s) in cart
+			PUT order information
+			DELETE item on cart
+'/order'		GET ordered item list
+			POST Payment method
+			GET delivery status
+
+Server	:
+'/'			GET statistic
+'/users'		GET all users
+'/order'		GET all ordered items
