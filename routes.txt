@@ -29,3 +29,25 @@ Server	:
 '/'			GET statistic
 '/users'		GET all users
 '/order'		GET all ordered items
+
+Food Ordering Web App
+
+Description	: The web app is maintained and controlled by restaurant owner. The user will not be allowed to make modification to the food list.
+
+User can	:
+- Visit homepage, which is contained navigation bar, promotion banner carousel, highlighted menu, and more
+- Visit about page, which contained static components
+- Visit contact page, which contained contact form to be sent to the server
+- Visit menu page, which is contained list of all menu
+- Open the menu detail
+- Login or register
+- Edit Profile
+- Buy Product
+- Edit Order
+- Make Payment
+- Give rating and comment to bought items
+
+Admin can	:
+- Visit admin dashboard which is contained sales statistic, ordered item, and more
+- Modify menu database
+- Modify user database

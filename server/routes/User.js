@@ -1,9 +1,11 @@
 const route = require('express').Router();
-const Profile = require('../models/Profile');
+const User = require('../models/User');
 
 //get profile information
 route.get('/', (req, res) => {
-    res.send("You can see your profile here")
+    User.find()
+    .then(users => res.json(users))
+    .catch(err => res.json(err))
 })
 
 //update profil with form
