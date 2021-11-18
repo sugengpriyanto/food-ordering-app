@@ -30,23 +30,18 @@ router.post("/login", async (req, res) => {
     try {
         //check if username exist
         const user = await User.findOne({ username: req.body.username})
-        if (!user) {
-            res.json("error: " + "Username does not exist")
-        }
+        !user && res.json("Username does not exist")
 
-        //if username exist, decrypt password from database
-        const originalPassword = CryptoJS.AES.decrypt(user.password, process.env.CRYPTO_SEC).toString()
-        console.log(originalPassword)
-        //JWT access token
+        
+        const hashedPassword = CryptoJS.AES.decrypt(user.password, process.env.CRYPTO_SEC)
+        const originalPassword = hashedPassword.toString(CryptoJS.enc.Utf8)
 
+        originalPassword !== req.body.password && res.json("Invalid Password")
 
-        //check if password match with user input
-        if(originalPassword !== req.body.password) {
-            res.json("error: " + "Password Invalid")
-        }
+        const {password, ...others} = user
 
         //if user successfully logged in
-        res.json(user)
+        res.json(others)
     }
     //if error
     catch (err) {

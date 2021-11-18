@@ -6,7 +6,7 @@ const productSchema = new Schema({
         type: String,
         required: true
     },
-    desc: {
+    description: {
         type: String,
         required: true
     },
@@ -21,7 +21,6 @@ const productSchema = new Schema({
         type: Number,
         required: true
     }
-
 }, {timestamps: true}
 );
 

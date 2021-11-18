@@ -1,4 +1,5 @@
 const route = require('express').Router()
+const Cart = require('../models/Cart')
 
 //get everything on cart
 route.get('/', (req, res) => {
@@ -11,7 +12,7 @@ route.put('/update', (req, res) => {
 })
 
 //remove item from cart
-route.delete('/delete', (req, res) => {
+route.delete('/id', (req, res) => {
     res.send("Your product has been removed from the cart")
 })
 
